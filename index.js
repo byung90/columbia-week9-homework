@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const license = require('./utils/license.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -54,10 +55,11 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  console.log(fileName);
-  // fs.writeFile(filename, JSON.stringify(data), err => err ? console.log(err) : console.log('ReadMe successfully created!'));
-  const readMe = `
-    # ${data.title}
+  const badge = license.renderLicenseBadge(data.license);
+  const licenseLink = license.renderLicenseLink(data.license);
+  const readMe = `# ${data.title}
+
+    ${badge}
 
     ## Description
     ${data.description}
@@ -83,14 +85,14 @@ function writeToFile(fileName, data) {
     ${data.testInstructions}
 
     ## License
-    ${data.license}
+    [${data.license}](${licenseLink})
 
     ## Questions
     If you have questions, please reach out here:
     Github: ${data.github}
     Email: ${data.email}
   `
-  console.log(readMe);
+  fs.writeFile(fileName, JSON.stringify(readMe), err => err ? console.log(err) : console.log('READme successfully created!'));
 }
 
 // TODO: Create a function to initialize app
