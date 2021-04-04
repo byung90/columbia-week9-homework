@@ -1,1 +1,35 @@
-"# READme generator\n\n    [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)\n\n    ## Description\n    This is a readme generator.\n\n    ## Table of Contents\n    - [Installation](#installation)\n    - [Usage](#usage)\n    - [Credits](#credits)\n    - [Test](#tests)\n    - [License](#license)\n    - [Questions](#questions)\n\n    ## Installations\n    Intall Inqurier JS\n\n    ## Usage\n    Answer prompted questions to create an automated README file.\n\n    ## Credits\n    No contributors.\n\n    ## Tests\n    N/A\n\n    ## License\n    [MIT](https://lbesson.mit-license.org/)\n\n    ## Questions\n    If you have questions, please reach out here:\n    Github: byung90\n    Email: byung90@gmail.com\n  "
+# README Generator
+
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
+## Description
+This is a README generator that will allow developers to seamlessly create README file for their projects.
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Test](#tests)
+- [License](#license)
+- [Questions](#questions)
+
+## Installations
+Install Inquirer JS using npm i inquirer
+
+## Usage
+Answer all of the prompts asked from the generator.
+![readme generator screenshot](./assets/screenshot.png)
+
+## Credits
+N/A
+
+## Tests
+N/A
+
+## License
+[MIT](https://lbesson.mit-license.org/)
+
+## Questions
+If you have questions, please reach out here:
+Github: byung90
+Email: byung90@gmail.com

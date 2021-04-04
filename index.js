@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+//Required dependencies
 const fs = require('fs');
 const inquirer = require('inquirer');
 const license = require('./utils/license.js');
 
-// TODO: Create an array of questions for user input
+// Prompt Questions
 const questions = [
   {
     type: 'input',
@@ -28,7 +28,7 @@ const questions = [
   {
     type: 'input',
     name: 'contributionGuidlines',
-    message: 'Enter contribution guidline:',
+    message: 'Enter contributors:',
   },
   {
     type: 'input',
@@ -53,49 +53,50 @@ const questions = [
   }
 ];
 
-// TODO: Create a function to write README file
+// Function to create README file
 function writeToFile(fileName, data) {
   const badge = license.renderLicenseBadge(data.license);
   const licenseLink = license.renderLicenseLink(data.license);
+
   const readMe = `# ${data.title}
 
-    ${badge}
+${badge}
 
-    ## Description
-    ${data.description}
+## Description
+${data.description}
 
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [Test](#tests)
-    - [License](#license)
-    - [Questions](#questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Test](#tests)
+- [License](#license)
+- [Questions](#questions)
 
-    ## Installations
-    ${data.installationInstructions}
+## Installations
+${data.installationInstructions}
 
-    ## Usage
-    ${data.usageInformation}
+## Usage
+${data.usageInformation}
 
-    ## Credits
-    ${data.contributionGuidlines}
+## Credits
+${data.contributionGuidlines}
 
-    ## Tests
-    ${data.testInstructions}
+## Tests
+${data.testInstructions}
 
-    ## License
-    [${data.license}](${licenseLink})
+## License
+[${data.license}](${licenseLink})
 
-    ## Questions
-    If you have questions, please reach out here:
-    Github: ${data.github}
-    Email: ${data.email}
-  `
-  fs.writeFile(fileName, JSON.stringify(readMe), err => err ? console.log(err) : console.log('READme successfully created!'));
+## Questions
+If you have questions, please reach out here:
+Github: ${data.github}
+Email: ${data.email}`
+
+  fs.writeFile(fileName, readMe, err => err ? console.log(err) : console.log('READme.md successfully created!'));
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
   inquirer
     .prompt(questions)
