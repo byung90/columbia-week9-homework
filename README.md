@@ -13,7 +13,7 @@ This is a README generator that will allow developers to seamlessly create READM
 - [License](#license)
 - [Questions](#questions)
 
-## Installations
+## Installation
 Install Inquirer JS using npm i inquirer
 
 ## Usage
